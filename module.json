@@ -9,7 +9,8 @@
   },
   "authors": [
     {
-      "name": "Your Name"
+      "name": "Odesii",
+      "url": "https://github.com/Odesii"
     }
   ],
   "scripts": ["scripts/main.js"],
@@ -22,7 +23,8 @@
     }
   ],
   "socket": true,
-  "url": "",
-  "manifest": "",
-  "download": ""
+  "url": "https://github.com/Odesii/gm-player-popup",
+  "manifest": "https://raw.githubusercontent.com/Odesii/gm-player-popup/main/module.json",
+  "download": "https://github.com/Odesii/gm-player-popup/releases/latest/download/gm-player-popup.zip"
 }
+// This module.json file is used to define the metadata for the GM Player Popup Messages module.
