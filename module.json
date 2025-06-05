@@ -24,6 +24,7 @@
   ],
   "socket": true,
   "url": "https://github.com/Odesii/gm-player-popup",
-  "manifest": "https://raw.githubusercontent.com/Odesii/gm-player-popup/main/module.json",
-  "download": "https://github.com/Odesii/gm-player-popup/releases/latest/download/gm-player-popup.zip"
+  "manifest": "https://raw.githubusercontent.com/Odesii/gm-message-push/refs/heads/main/module.json",
+  "download": "https://github.com/Odesii/gm-message-push/archive/refs/tags/v.01.zip"
 }
+
