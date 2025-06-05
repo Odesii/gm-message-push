@@ -1,7 +1,7 @@
 {
   "id": "gm-player-popup",
   "type": "module",
-  "title": "GM Push Messages",
+  "title": "GM Player Popup Messages",
   "description": "Allows GMs to send popup messages to specific players that appear in the corner of their screen.",
   "version": "1.0.0",
   "compatibility": {
