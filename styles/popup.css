@@ -1,0 +1,330 @@
+/* GM Player Popup Styles */
+
+.gm-player-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  max-width: 350px;
+  z-index: 10000;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.gm-player-popup.show {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.popup-content {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  position: relative;
+  color: #ecf0f1;
+}
+
+.popup-close {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: #bdc3c7;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.popup-close:hover {
+  background: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+}
+
+.popup-message {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-right: 20px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* Effect: Slow Pulse */
+.effect-pulse .popup-message {
+  animation: slowPulse 2s ease-in-out infinite;
+}
+
+@keyframes slowPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Effect: Flickering */
+.effect-flicker .popup-message {
+  animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    opacity: 1;
+  }
+  20%,
+  24%,
+  55% {
+    opacity: 0.4;
+  }
+}
+
+/* Effect: Glitching */
+.effect-glitch .popup-content {
+  animation: glitchBg 0.3s infinite;
+}
+
+.effect-glitch .popup-message {
+  animation: glitchText 0.2s infinite;
+  text-shadow: 2px 0 #ff0000, -2px 0 #00ffff, 0 2px #ffff00;
+}
+
+@keyframes glitchBg {
+  0%,
+  90%,
+  100% {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    transform: translateX(0);
+  }
+  10% {
+    background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+    transform: translateX(-2px);
+  }
+  20% {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    transform: translateX(2px);
+  }
+}
+
+@keyframes glitchText {
+  0%,
+  90%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-1px, 1px);
+  }
+  40% {
+    transform: translate(-1px, -1px);
+  }
+  60% {
+    transform: translate(1px, 1px);
+  }
+  80% {
+    transform: translate(1px, -1px);
+  }
+}
+
+/* Effect: Static */
+.effect-static .popup-content {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.03) 2px,
+      rgba(255, 255, 255, 0.03) 4px
+    );
+  animation: staticNoise 0.1s infinite;
+}
+
+.effect-static .popup-message {
+  text-shadow: 1px 0 rgba(255, 255, 255, 0.2), -1px 0 rgba(255, 255, 255, 0.2),
+    0 1px rgba(255, 255, 255, 0.2);
+  animation: staticFlicker 0.05s infinite;
+}
+
+@keyframes staticNoise {
+  0% {
+    filter: contrast(1) brightness(1);
+  }
+  5% {
+    filter: contrast(1.1) brightness(1.1);
+  }
+  10% {
+    filter: contrast(0.9) brightness(0.9);
+  }
+  15% {
+    filter: contrast(1.05) brightness(1.05);
+  }
+  20% {
+    filter: contrast(0.95) brightness(0.95);
+  }
+  100% {
+    filter: contrast(1) brightness(1);
+  }
+}
+
+@keyframes staticFlicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.98;
+  }
+}
+
+/* Effect: Chaos Combo (Dynamic switching) */
+.effect-combo .popup-message.effect-pulse {
+  animation: slowPulse 2s ease-in-out infinite;
+}
+
+.effect-combo .popup-message.effect-flicker {
+  animation: flicker 0.15s infinite;
+}
+
+.effect-combo .popup-message.effect-glitch {
+  animation: glitchText 0.2s infinite;
+  text-shadow: 2px 0 #ff0000, -2px 0 #00ffff, 0 2px #ffff00;
+}
+
+/* Static characters overlay */
+.static-char {
+  color: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+  animation: staticCharFade 0.2s ease-out;
+}
+
+@keyframes staticCharFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+}
+
+/* Enhanced effects for different themes */
+.effect-glitch .popup-content {
+  border-color: #e74c3c;
+  box-shadow: 0 8px 32px rgba(231, 76, 60, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.effect-static .popup-content {
+  border-color: #95a5a6;
+  box-shadow: 0 8px 32px rgba(149, 165, 166, 0.3),
+    0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.effect-pulse .popup-content {
+  border-color: #f39c12;
+  box-shadow: 0 8px 32px rgba(243, 156, 18, 0.3);
+  animation: pulseBorder 2s ease-in-out infinite;
+}
+
+@keyframes pulseBorder {
+  0%,
+  100% {
+    border-color: #f39c12;
+    box-shadow: 0 8px 32px rgba(243, 156, 18, 0.3);
+  }
+  50% {
+    border-color: #e67e22;
+    box-shadow: 0 8px 32px rgba(230, 126, 34, 0.5);
+  }
+}
+
+.effect-flicker .popup-content {
+  border-color: #9b59b6;
+  animation: flickerBorder 0.15s infinite;
+}
+
+@keyframes flickerBorder {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    border-color: #9b59b6;
+    box-shadow: 0 8px 32px rgba(155, 89, 182, 0.3);
+  }
+  20%,
+  24%,
+  55% {
+    border-color: #8e44ad;
+    box-shadow: 0 8px 32px rgba(142, 68, 173, 0.1);
+  }
+}
+
+/* Animation keyframes */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .gm-player-popup {
+    right: 10px;
+    top: 10px;
+    max-width: calc(100vw - 40px);
+  }
+}
+
+/* Dark theme compatibility */
+.gm-player-popup .popup-content {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Multiple popup stacking */
+.gm-player-popup:nth-child(n + 2) {
+  top: calc(20px + (n-1) * 100px);
+}

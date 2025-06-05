@@ -1,0 +1,23 @@
+{
+  "gm-player-popup": {
+    "title": "GM Player Popup Messages",
+    "button": {
+      "send-popup": "Send Popup to Player"
+    },
+    "dialog": {
+      "title": "Send Popup Message to Player",
+      "message": "Message:",
+      "player": "Send to Player:",
+      "duration": "Display Duration (seconds):",
+      "all-players": "All Players",
+      "send": "Send",
+      "cancel": "Cancel"
+    },
+    "notifications": {
+      "no-players": "No active players to send messages to.",
+      "empty-message": "Please enter a message.",
+      "sent-to": "Popup message sent to {player}.",
+      "sent-to-all": "Popup message sent to all players."
+    }
+  }
+}
